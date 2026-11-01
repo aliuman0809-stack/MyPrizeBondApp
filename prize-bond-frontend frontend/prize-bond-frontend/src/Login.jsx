@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/auth"; 
+const API_URL = "https://myprizebondapp.onrender.com/api/auth";
 
 export default function Login() {
   const [isLogin, setIsLogin] = useState(true);
