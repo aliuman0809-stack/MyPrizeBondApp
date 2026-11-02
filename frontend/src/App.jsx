@@ -1,5 +1,5 @@
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { useState, useEffect } from "react";
 import Login from "./Login";
 import Dashboard from "./Dashboard";
 
@@ -8,6 +8,7 @@ export default function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // Session storage check safely
     const user = sessionStorage.getItem("user");
     setIsAuthenticated(!!user);
     setLoading(false);
