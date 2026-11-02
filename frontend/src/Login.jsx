@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const API_URL = "https://myprizebondapp.onrender.com/api/auth";
 
 export default function Login() {
+  const navigate = useNavigate();
   const [isLogin, setIsLogin] = useState(true);
   const [formData, setFormData] = useState({ name: "", email: "", pin: "" });
   const [error, setError] = useState("");
@@ -21,8 +23,8 @@ export default function Login() {
         // User data save karein
         sessionStorage.setItem("user", JSON.stringify(res.data.user));
         
-        // Yahan window.location use kiya hai taake Dashboard foran khul jaye
-        window.location.href = "/dashboard"; 
+        // Navigate use karein taake page reload na ho
+        navigate("/dashboard"); 
       } else {
         await axios.post(`${API_URL}/register`, formData);
         alert("Registration successful! Wait for admin approval.");

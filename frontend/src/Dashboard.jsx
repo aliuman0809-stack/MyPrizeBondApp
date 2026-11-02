@@ -6,7 +6,6 @@ const API_URL = "https://myprizebondapp.onrender.com/api";
 
 export default function Dashboard() {
   const navigate = useNavigate();
-  const user = JSON.parse(sessionStorage.getItem("user") || "{}");
   
   const [activeTab, setActiveTab] = useState("dashboard");
   const [series, setSeries] = useState([]);
