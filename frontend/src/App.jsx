@@ -8,13 +8,12 @@ export default function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Session storage check safely
     const user = sessionStorage.getItem("user");
     setIsAuthenticated(!!user);
     setLoading(false);
   }, []);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div style={{ textAlign: "center", marginTop: "50px" }}>Loading...</div>;
 
   return (
     <BrowserRouter>

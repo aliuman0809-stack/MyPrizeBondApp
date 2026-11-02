@@ -20,10 +20,7 @@ export default function Login() {
           pin: formData.pin,
         });
         
-        // User data save karein
         sessionStorage.setItem("user", JSON.stringify(res.data.user));
-        
-        // Navigate use karein taake page reload na ho
         navigate("/dashboard"); 
       } else {
         await axios.post(`${API_URL}/register`, formData);
